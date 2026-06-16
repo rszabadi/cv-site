@@ -1,0 +1,52 @@
+---
+import '../styles/global.css';
+
+export interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Nombre Apellido — Técnico Informático',
+  description = 'Técnico informático junior especializado en soporte IT, Linux y virtualización. Disponible para oportunidades en Lleida y alrededores.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#0a0a0a" />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+
+    <nav>
+      <div class="nav-inner">
+        <span class="nav-brand"><span>~</span>/nombre</span>
+        <ul class="nav-links">
+          <li><a href="#experiencia">Experiencia</a></li>
+          <li><a href="#homelab">Homelab</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer>
+      <div class="container">
+        <span>Nombre Apellido</span> · Lleida, Cataluña · {new Date().getFullYear()}
+      </div>
+    </footer>
+
+  </body>
+</html>

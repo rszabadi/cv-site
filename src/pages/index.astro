@@ -1,0 +1,221 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Section from '../components/Section.astro';
+import ExperienceCard from '../components/ExperienceCard.astro';
+---
+
+<Layout>
+
+  <!-- ── Hero ── -->
+  <div class="hero">
+    <div class="container">
+      <div class="terminal-block">
+        <div class="terminal-titlebar">
+          <span class="dot dot-r"></span>
+          <span class="dot dot-y"></span>
+          <span class="dot dot-g"></span>
+          <span class="terminal-title">bash — whoami</span>
+        </div>
+        <div class="terminal-body">
+          <div>
+            <span class="t-prompt">user@lleida:~$ </span>
+            <span class="t-cmd">cat /etc/profile.d/me.sh</span>
+          </div>
+          <span class="t-blank"></span>
+          <div><span class="t-key">NAME</span><span class="t-val">="Nombre Apellido"</span></div>
+          <div><span class="t-key">ROLE</span><span class="t-val">="Técnico Informático Junior"</span></div>
+          <div><span class="t-key">LOCATION</span><span class="t-val">="Lleida, Cataluña, ES"</span></div>
+          <div><span class="t-key">EDUCATION</span><span class="t-val">="CFGM Sistemas Microinformáticos y Redes (SMX)"</span></div>
+          <div><span class="t-key">EXPERIENCE</span><span class="t-val">="Soporte IT real + homelab avanzado"</span></div>
+          <div><span class="t-key">LANGUAGES</span><span class="t-val">="Español (nativo), Inglés (C1 Cambridge)"</span></div>
+          <div><span class="t-key">STATUS</span><span class="t-val">="<span style="color:var(--accent)">buscando oportunidades</span>"</span></div>
+          <span class="t-blank"></span>
+          <div>
+            <span class="t-prompt">user@lleida:~$ </span>
+            <span class="t-cursor"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Sobre mí ── -->
+  <Section id="sobre-mi" label="sobre_mi.txt">
+    <p style="font-size: 0.85rem; color: var(--text-dim); max-width: 620px; line-height: 1.85;">
+      Técnico informático con formación en SMX y más de 700 horas de experiencia práctica en entornos reales:
+      desde soporte y reparación en tienda hasta gestión de tickets en empresa. Más allá del horario laboral,
+      mantengo un homelab personal con Proxmox, servidores Linux y documentación propia. Perfil orientado a
+      soporte técnico, sistemas Linux y virtualización, con alta capacidad de aprendizaje autónomo.
+    </p>
+  </Section>
+
+  <!-- ── Experiencia ── -->
+  <Section id="experiencia" label="experiencia/">
+
+    <ExperienceCard
+      title="Prácticas profesionales"
+      place="Empresa IT — Entorno corporativo"
+      period="2024"
+      hours="515"
+      items={[
+        "Gestión de tickets de soporte técnico con seguimiento hasta resolución",
+        "Diagnóstico y resolución de incidencias hardware y software",
+        "Soporte directo a usuarios reales en entorno de empresa",
+        "Instalación, configuración y mantenimiento de equipos",
+        "Reparación y sustitución de componentes",
+      ]}
+    />
+
+    <ExperienceCard
+      title="Técnico de tienda"
+      place="Tienda de informática — Lleida"
+      period="2023–2024"
+      hours="~200"
+      items={[
+        "Montaje y reparación de PCs de sobremesa y portátiles",
+        "Diagnóstico de fallos hardware y software",
+        "Instalación y reinstalación de sistemas operativos (Windows / Linux)",
+        "Preparación y revisión de equipos de segunda mano para venta",
+        "Atención técnica a clientes",
+      ]}
+    />
+
+  </Section>
+
+  <!-- ── Formación ── -->
+  <Section id="formacion" label="formacion/">
+    <div class="card fade-in">
+      <div class="card-header">
+        <span class="card-title">CFGM Sistemas Microinformáticos y Redes</span>
+        <span class="card-meta">SMX</span>
+      </div>
+      <div class="card-sub">Lleida, Cataluña · Titulación oficial</div>
+      <div class="card-body">
+        Formación oficial en redes, sistemas operativos, hardware, mantenimiento de equipos y
+        soporte técnico. Incluye módulo de FCT (prácticas en empresa real).
+      </div>
+    </div>
+  </Section>
+
+  <!-- ── Homelab ── -->
+  <Section id="homelab" label="homelab/">
+
+    <div class="card fade-in" style="margin-bottom: 1.5rem;">
+      <div class="card-header">
+        <span class="card-title">Servidor personal · Proxmox VE</span>
+        <span class="card-meta"><span class="status-dot"></span>running</span>
+      </div>
+      <div class="card-body">
+        Servidor doméstico gestionado con Proxmox VE ejecutando múltiples VMs en producción.
+        Administración completa de red, almacenamiento y servicios desde CLI.
+      </div>
+    </div>
+
+    <div class="homelab-grid">
+      <div class="service-card fade-in">
+        <div class="service-host">proxmox &gt; vm-01</div>
+        <div class="service-name">Ubuntu Server</div>
+        <div class="service-desc">DNS local (Pi-hole), game servers, servicios varios. Configuración y mantenimiento manual.</div>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-host">proxmox &gt; vm-02</div>
+        <div class="service-name">OpenMediaVault</div>
+        <div class="service-desc">NAS casero con gestión de almacenamiento, Samba y backups locales.</div>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-host">workstation</div>
+        <div class="service-name">Arch Linux + Hyprland</div>
+        <div class="service-desc">Escritorio principal. Ryzen 5 7600X, RX 9060 XT, Wayland nativo. Configuración completa desde cero.</div>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-host">laptop</div>
+        <div class="service-name">ThinkPad T480</div>
+        <div class="service-desc">Portátil de trabajo. Libreboot en progreso, KVM/QEMU con passthrough USB planificado.</div>
+      </div>
+    </div>
+
+  </Section>
+
+  <!-- ── Skills ── -->
+  <Section id="skills" label="skills.json">
+    <div class="skills-grid">
+      <div class="skill-item fade-in">
+        <span class="skill-icon">🐧</span>
+        <span>Linux (Arch, Ubuntu)</span>
+      </div>
+      <div class="skill-item fade-in">
+        <span class="skill-icon">🖥️</span>
+        <span>Soporte IT</span>
+      </div>
+      <div class="skill-item fade-in">
+        <span class="skill-icon">🔧</span>
+        <span>Hardware & reparación</span>
+      </div>
+      <div class="skill-item fade-in">
+        <span class="skill-icon">⚡</span>
+        <span>Proxmox VE</span>
+      </div>
+      <div class="skill-item fade-in">
+        <span class="skill-icon">🌐</span>
+        <span>Redes TCP/IP</span>
+      </div>
+      <div class="skill-item fade-in">
+        <span class="skill-icon">🪟</span>
+        <span>Windows / AD</span>
+      </div>
+      <div class="skill-item fade-in">
+        <span class="skill-icon">📜</span>
+        <span>Bash scripting</span>
+      </div>
+      <div class="skill-item fade-in">
+        <span class="skill-icon">🎫</span>
+        <span>Gestión de tickets</span>
+      </div>
+      <div class="skill-item fade-in">
+        <span class="skill-icon">🔍</span>
+        <span>Troubleshooting</span>
+      </div>
+      <div class="skill-item fade-in">
+        <span class="skill-icon">📝</span>
+        <span>Documentación técnica</span>
+      </div>
+    </div>
+  </Section>
+
+  <!-- ── Idiomas ── -->
+  <Section id="idiomas" label="idiomas/">
+    <div class="lang-grid">
+      <div class="lang-card fade-in">
+        <div class="lang-name">Español</div>
+        <div class="lang-level">Nativo</div>
+      </div>
+      <div class="lang-card fade-in">
+        <div class="lang-name">Inglés</div>
+        <div class="lang-level">C1 · Cambridge Certificate</div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- ── Contacto ── -->
+  <Section id="contacto" label="contacto/">
+    <div class="contact-links">
+      <a class="contact-link" href="mailto:tu@email.com">
+        <span class="contact-label">email</span>
+        tu@email.com
+      </a>
+      <a class="contact-link" href="https://github.com/tuusuario" target="_blank" rel="noopener">
+        <span class="contact-label">github</span>
+        github.com/tuusuario
+      </a>
+      <!-- Opcional: Instagram profesional
+      <a class="contact-link" href="https://instagram.com/tuperfil" target="_blank" rel="noopener">
+        <span class="contact-label">instagram</span>
+        @tuperfil
+      </a>
+      -->
+    </div>
+  </Section>
+
+</Layout>
+
+

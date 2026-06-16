@@ -1,0 +1,24 @@
+---
+export interface Props {
+  title: string;
+  place: string;
+  period: string;
+  hours?: string;
+  items: string[];
+}
+
+const { title, place, period, hours, items } = Astro.props;
+---
+
+<div class="card fade-in">
+  <div class="card-header">
+    <span class="card-title">{title}</span>
+    <span class="card-meta">{period}{hours ? ` · ${hours}h` : ''}</span>
+  </div>
+  <div class="card-sub">{place}</div>
+  <div class="card-body">
+    <ul>
+      {items.map(item => <li>{item}</li>)}
+    </ul>
+  </div>
+</div>
