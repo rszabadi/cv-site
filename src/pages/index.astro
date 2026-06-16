@@ -18,7 +18,7 @@ import ExperienceCard from '../components/ExperienceCard.astro';
         </div>
         <div class="terminal-body">
           <div>
-            <span class="t-prompt">user@lleida:~$ </span>
+            <span class="t-prompt">robertmihai@lleida:~$ </span>
             <span class="t-cmd">cat /etc/profile.d/me.sh</span>
           </div>
           <span class="t-blank"></span>
@@ -31,7 +31,7 @@ import ExperienceCard from '../components/ExperienceCard.astro';
           <div><span class="t-key">STATUS</span><span class="t-val">="<span style="color:var(--accent)">buscando oportunidades</span>"</span></div>
           <span class="t-blank"></span>
           <div>
-            <span class="t-prompt">user@lleida:~$ </span>
+            <span class="t-prompt">robertmihai@lleida:~$ </span>
             <span class="t-cursor"></span>
           </div>
         </div>
@@ -42,7 +42,7 @@ import ExperienceCard from '../components/ExperienceCard.astro';
   <!-- ── Sobre mí ── -->
   <Section id="sobre-mi" label="sobre_mi.txt">
     <p style="font-size: 0.85rem; color: var(--text-dim); max-width: 620px; line-height: 1.85;">
-      Técnico informático con formación en SMX y más de 700 horas de experiencia práctica en entornos reales:
+      Técnico informático con formación en SMX y más de 500 horas de experiencia práctica en entornos reales:
       desde soporte y reparación en tienda hasta gestión de tickets en empresa. Más allá del horario laboral,
       mantengo un homelab personal con Proxmox, servidores Linux y documentación propia. Perfil orientado a
       soporte técnico, sistemas Linux y virtualización, con alta capacidad de aprendizaje autónomo.
@@ -54,9 +54,9 @@ import ExperienceCard from '../components/ExperienceCard.astro';
 
     <ExperienceCard
       title="Prácticas profesionales"
-      place="Empresa IT — Entorno corporativo"
-      period="2024"
-      hours="515"
+      place="Ilerna Lleida — Carrer La Palma 33, 25002"
+      period="2024-2025"
+      hours="330"
       items={[
         "Gestión de tickets de soporte técnico con seguimiento hasta resolución",
         "Diagnóstico y resolución de incidencias hardware y software",
@@ -68,22 +68,21 @@ import ExperienceCard from '../components/ExperienceCard.astro';
 
     <ExperienceCard
       title="Técnico de tienda"
-      place="Tienda de informática — Lleida"
-      period="2023–2024"
-      hours="~200"
+      place="Home Gallery — Carrer Sant Antoni 28, 25002"
+      period="2024"
+      hours="185"
       items={[
-        "Montaje y reparación de PCs de sobremesa y portátiles",
-        "Diagnóstico de fallos hardware y software",
-        "Instalación y reinstalación de sistemas operativos (Windows / Linux)",
-        "Preparación y revisión de equipos de segunda mano para venta",
-        "Atención técnica a clientes",
+        "Preparación de portátiles para la venta",
+        "Instalación y reinstalación de sistemas operativos (Windows)",
+        "Sugerencias y venta a clientes",
+        "Atención a clientes",
       ]}
     />
 
   </Section>
 
   <!-- ── Formación ── -->
-  <Section id="formacion" label="formacion/">
+  <Section id="formacion" label="formación/">
     <div class="card fade-in">
       <div class="card-header">
         <span class="card-title">CFGM Sistemas Microinformáticos y Redes</span>
@@ -190,8 +189,16 @@ import ExperienceCard from '../components/ExperienceCard.astro';
         <div class="lang-level">Nativo</div>
       </div>
       <div class="lang-card fade-in">
+        <div class="lang-name">Rumano</div>
+        <div class="lang-level">Nativo</div>
+      </div>
+      <div class="lang-card fade-in">
         <div class="lang-name">Inglés</div>
         <div class="lang-level">C1 · Cambridge Certificate</div>
+      </div>
+      <div class="lang-card fade-in">
+        <div class="lang-name">Catalán</div>
+        <div class="lang-level">Intermedio</div>
       </div>
     </div>
   </Section>
@@ -199,20 +206,14 @@ import ExperienceCard from '../components/ExperienceCard.astro';
   <!-- ── Contacto ── -->
   <Section id="contacto" label="contacto/">
     <div class="contact-links">
-      <a class="contact-link" href="mailto:tu@email.com">
+      <a class="contact-link" href="mailto:08rmihai@gmail.com">
         <span class="contact-label">email</span>
         tu@email.com
       </a>
-      <a class="contact-link" href="https://github.com/tuusuario" target="_blank" rel="noopener">
+      <a class="contact-link" href="https://github.com/rszabadi" target="_blank" rel="noopener">
         <span class="contact-label">github</span>
-        github.com/tuusuario
+        github.com/rszabadi
       </a>
-      <!-- Opcional: Instagram profesional
-      <a class="contact-link" href="https://instagram.com/tuperfil" target="_blank" rel="noopener">
-        <span class="contact-label">instagram</span>
-        @tuperfil
-      </a>
-      -->
     </div>
   </Section>
 
